@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -27,11 +28,12 @@
 	<meta name="msapplication-square310x310logo" content="/largetile.png" />
 </head>
 <body>
-	<header class="header">
+	<header class="header" id="home">
 		<div class="header__top-nav wrapper">
 			<div class="header__top-nav__container">
 				<a href="#" class="header__top-nav__container__logo"><img src="./public/images/logo.png" alt="Dynamic Filtration LTD." class="header__top-nav__container__logo__image"></a>
 			</div>
+			<!-- Hamburger Menu -->
 			<div class="toggle">
 				<div id="nav-icon">
 					<span class="menu"></span>
@@ -40,33 +42,36 @@
 					<span class="menu"></span>
 				</div>
 			</div>
-			<nav>
-				<div class="header__top-nav__container">
-					<div class="header__top-nav__container__contact">
-						<ul>
-							<li>Call Us: <a href="tel:800-265-4544">800.265.4544</a></li>
-							<li><img src="./public/images/linkin.png" alt="Linked in">Linked In</li>
-							<li><img src="./public/images/search.png" alt=""></li>
+			<nav class="global-nav animated slideInDown ">
+				<div class="global-nav__container">
+					<div class="global-nav__container__contact">
+						<ul class="global-nav__container__contact__list">
+							<li class="global-nav__container__contact__list__item global-nav__item global-nav__item">Call Us: <a class="global-nav__container__contact__list__item__link" href="tel:800-265-4544">800.265.4544</a></li>
+							<li class="global-nav__container__contact__list__item global-nav__item global-nav__item"><a class="global-nav__container__contact__list__item__link" href="#"><img src="./public/images/linkin.png" alt="Linked in">Linked In</a></li>
+							<li class="global-nav__container__contact__list__item global-nav__item global-nav__item"><a class="global-nav__container__contact__list__item__link" href="#"><img src="./public/images/search.png" alt=""></a></li>
 						</ul>
 					</div>
-					<div>
-						<ul>
-							<li><a href="#home">Home</a></li>
-							<li><a href="#products">Products</a></li>
-							<li><a href="#custom">Custom</a></li>
-							<li><a href="#industries">Industries</a></li>
-							<li><a href="#about">About Us</a></li>
-							<li><a href="#contact">Contact Us</a></li>
+					<div class="global-nav__container__page-nav">
+						<ul class="global-nav__container__page-nav__list">
+							<li class="global-nav__container__page-nav__list__item global-nav__item"><a class="global-nav__container__page-nav__list__item__link" href="#home">Home</a></li>
+							<li class="global-nav__container__page-nav__list__item global-nav__item"><a class="global-nav__container__page-nav__list__item__link" href="#products">Products</a></li>
+							<li class="global-nav__container__page-nav__list__item global-nav__item"><a class="global-nav__container__page-nav__list__item__link" href="#custom">Custom</a></li>
+							<li class="global-nav__container__page-nav__list__item global-nav__item"><a class="global-nav__container__page-nav__list__item__link" href="#industries">Industries</a></li>
+							<li class="global-nav__container__page-nav__list__item global-nav__item"><a class="global-nav__container__page-nav__list__item__link" href="#about">About Us</a></li>
+							<li class="global-nav__container__page-nav__list__item global-nav__item"><a class="global-nav__container__page-nav__list__item__link" href="#contact">Contact Us</a></li>
 						</ul>
 					</div>
 				</div>
-				<div class="header__top-nav__container">
+				<div class="header__top-nav__container__quote">
 					<a href="#"><img src="./public/images/request-info.png" alt="">Request Information</a>
 				</div>
 			</div>
 		</nav>
-		<h1>Manufacturing and Designer </br>of Industrial Filtration</h1>
-		<h2>for Air and Liquid Applications</h2>
+		<!-- Slider -->
+		<div>
+			<h1>Manufacturing and Designer </br>of Industrial Filtration</h1>
+			<h2>for Air and Liquid Applications</h2>
+		</div>
 	</header>
 	<main>
 		<!-- Products -->
@@ -145,7 +150,7 @@
 			<p class="custom__paragraph">Dynamic filtration limited was established in 1988 with 8,500 sq ft of production space in waterloo, Onatrio.  In 2014, we underwent an extensive building expansion which nearly doubled our production capacity.  As a proud family owned & operated business, we have over 38 years of experience in the filtration industry and are a manufacturer and supplier to North America for inlet filters, and filter systems for compressors and blower units.</p>
 			<a href="#" class="custom__link">Read More</a>
 		</section>
-		<section class="industries">
+		<section id="industries" class="industries">
 			<h2 class="industries__header">Our Industries</h2>
 			<p class="industries__paragraph">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid, dicta voluptatem eligendi impedit earum totam quas consequatur rem provident magni, dignissimos nemo obcaecati sint dolorum nobis quod exercitationem nesciunt. Quaerat!</p>
 			<div class="industries__gallery">

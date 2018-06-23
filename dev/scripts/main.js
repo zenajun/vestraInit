@@ -2,13 +2,13 @@ const app = {};
 
 app.hamburger = () => {
   $('#nav-icon').click(() => {
-    $('ul').toggleClass('active');
+    $('.global-nav').toggleClass('active');
   });
 }
 
 app.closeHamburger = () => {
-  $('.header__nav__list__item__link').click(() => {
-    $('ul').removeClass('active');
+  $('.global-nav__item').click(() => {
+    $('.global-nav').removeClass('active');
     $('#nav-icon').removeClass('open');
   });
 }
