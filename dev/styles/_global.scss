@@ -22,6 +22,11 @@ $accentBackground: #f6f6f6;
 $accentBlue: #009ac8;
 $lightBlue: #38add4;
 
+.col-one-sixth {
+  @media (min-width: 1020px) {
+    width: calc(50% / 3);
+  }
+}
 
 
 
