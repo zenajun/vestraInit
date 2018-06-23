@@ -1,0 +1,21 @@
+.header {
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 10px;
+    background-image: url(../../public/images/header-top.jpg);
+  }
+  &__top-nav {
+    &__container {
+      &__contact {
+        font-weight: 300;
+      }
+      &__logo {
+        &__image {
+
+        }
+      }
+    }
+  }
+}

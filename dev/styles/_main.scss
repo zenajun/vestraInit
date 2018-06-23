@@ -1,0 +1,39 @@
+// sections:
+// products
+// custom
+// industries
+// about
+// contact
+
+.products {
+  background: $accentBackground;
+  &__header {
+    color: $darkGrey;
+    font-size: 3rem;
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 65px 0 35px;
+  }
+  &__paragraph {
+    text-transform: uppercase;
+    text-align: center;
+    color: $mediumGrey;
+    margin: 0;
+    font-weight: 300;
+    padding-bottom: 60px;
+  }
+  &__gallery {
+    padding: 0 5px;
+    &__item {
+      padding-bottom: 55px;
+      &__image-container {
+        max-width: 370px;
+        margin: 0 auto;
+        background: white;
+      }
+
+    }
+  }
+}

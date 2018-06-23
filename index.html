@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Vestra Init</title>
+	<title>Dynamic Filtration LTD.</title>
 	<link rel="stylesheet" href="public/styles/style.css">
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 	<link rel="apple-touch-icon" sizes="57x57" href="./public/images/">
@@ -27,74 +27,105 @@
 	<meta name="msapplication-square310x310logo" content="/largetile.png" />
 </head>
 <body>
-	<header>
-		<nav>
-			<a href="#">LOGO</a>
-			<ul>
-				<li><a href="#home">Home</a></li>
-				<li><a href="#products">Products</a></li>
-				<li><a href="#custom">Custom</a></li>
-				<li><a href="#industries">Industries</a></li>
-				<li><a href="#about">About Us</a></li>
-				<li><a href="#contact">Contact Us</a></li>
-			</ul>
-			<a href="#">Request Information</a>
+	<header class="header">
+		<div class="header__top-nav wrapper">
+			<div class="header__top-nav__container">
+				<a href="#" class="header__top-nav__container__logo"><img src="./public/images/logo.png" alt="Dynamic Filtration LTD." class="header__top-nav__container__logo__image"></a>
+			</div>
+			<div class="header__top-nav__container">
+				<div class="header__top-nav__container__contact">
+					<ul>
+						<li>Call Us: <a href="tel:800-265-4544">800.265.4544</a></li>
+						<li><img src="./public/images/linkin.png" alt="Linked in">Linked In</li>
+						<li><img src="./public/images/search.png" alt=""></li>
+					</ul>
+				</div>
+				<div>
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#products">Products</a></li>
+						<li><a href="#custom">Custom</a></li>
+						<li><a href="#industries">Industries</a></li>
+						<li><a href="#about">About Us</a></li>
+						<li><a href="#contact">Contact Us</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="header__top-nav__container">
+				<a href="#"><img src="./public/images/request-info.png" alt="">Request Information</a>
+			</div>
+		</div>
 		</nav>
 		<h1>Manufacturing and Designer </br>of Industrial Filtration</h1>
 		<h2>for Air and Liquid Applications</h2>
 	</header>
 	<main>
-		<section id="products">
-			<h2>Welcome to Dynamic Filtration</h2>
-			<p>Dynamic Filtration's product lines include: inlet filters for air compression equipment, replacement filter elements and panal filters for several oem's such as dollinger, consler, solberg, nafco, ifm, airmaze, sparks and endustra.</p>
+		<section id="products" class="products">
+			<h2 class="products__header">Welcome to Dynamic Filtration</h2>
+			<p class="products__paragraph">Dynamic Filtration's product lines include: inlet filters for air compression equipment, replacement filter elements and panal filters for several oem's such as dollinger, consler, solberg, nafco, ifm, airmaze, sparks and endustra.</p>
+			<div class="products__gallery">
+				<div class="products__gallery__item">
+					<div class="products__gallery__item__image-container">
+						<img src="./public/images/1moulded-filter-element.jpg" class="products__gallery__item__image-container__image" alt="Moulded filter element">
+					</div>
+					<div class="products__gallery__item__text-container">
+						<h2 class="products__gallery__item__text-container__header">Moulded Filter Elements</h2>
+						<p class="products__gallery__item__text-container__paragraph">Moulded filters are typically used on air filtration applications...</p>
+					</div>
+				</div>
 
-			<div>
-				<div><img src="./public/images/1moulded-filter-element.jpg" alt="Moulded filter element"></div>
-				<div>
-					<h2>Moulded Filter Elements</h2>
-					<p>Moulded filters are typically used on air filtration applications...</p>
+			<div class="products__gallery__item">
+				<div class="products__gallery__item__image-container">
+					<img src="./public/images/2sewn-end-filter-elements.jpg" class="products__gallery__item__image-container__image" alt="Sewn End Filter Elements">
+				</div>
+				<div class="products__gallery__item__text-container">
+					<h2 class="products__gallery__item__text-container__header">Sewn End Filter Elements</h2>
+						<p class="products__gallery__item__text-container__paragraph">Moulded filters are typically used on air filtration applications...</p>
 				</div>
 			</div>
-			<div>
-				<div><img src="./public/images/2sewn-end-filter-elements.jpg" alt="Sewn End Filter Elements"></div>
-				<div>
-					<h2>Sewn End Filter Elements</h2>
-						<p>Moulded filters are typically used on air filtration applications...</p>
+			<div class="products__gallery__item">
+				<div class="products__gallery__item__image-container">
+					<img src="./public/images/3replacement-panal-filters.jpg" class="products__gallery__item__image-container__image" alt="Replacement Panel Filters">
+				</div>
+				<div class="products__gallery__item__text-container">
+					<h2 class="products__gallery__item__text-container__header">Replacement Panel Filters</h2>
+						<p class="products__gallery__item__text-container__paragraph">Moulded filters are typically used on air filtration applications...</p>
 				</div>
 			</div>
-			<div>
-				<div><img src="./public/images/3replacement-panal-filters.jpg" alt="Replacement Panel Filters"></div>
-				<div>
-					<h2>Replacement Panel Filters</h2>
-						<p>Moulded filters are typically used on air filtration applications...</p>
+			<div class="products__gallery__item">
+				<div class="products__gallery__item__image-container">
+					<img src="./public/images/4panal-type-inlet-filters.jpg" class="products__gallery__item__image-container__image" alt="Panel Type Inlet filters">
+				</div>
+				<div class="products__gallery__item__text-container">
+					<h2 class="products__gallery__item__text-container__header">Panel Type Inlet filters</h2>
+						<p class="products__gallery__item__text-container__paragraph">Moulded filters are typically used on air filtration applications...</p>
 				</div>
 			</div>
-			<div>
-				<div><img src="./public/images/4panal-type-inlet-filters.jpg" alt="Panel Type Inlet filters"></div>
-				<div>
-					<h2>Panel Type Inlet filters</h2>
-						<p>Moulded filters are typically used on air filtration applications...</p>
+			<div class="products__gallery__item">
+				<div class="products__gallery__item__image-container">
+					<img src="./public/images/5canister-type-inlet-filters-silencers.jpg" class="products__gallery__item__image-container__image" alt="Canister Type Inlet Filters / Silencers">
+				</div>
+				<div class="products__gallery__item__text-container">
+					<h2 class="products__gallery__item__text-container__header">Canister Type Inlet Filters / Silencers</h2>
+						<p class="products__gallery__item__text-container__paragraph">Moulded filters are typically used on air filtration applications...</p>
 				</div>
 			</div>
-			<div>
-				<div><img src="./public/images/5canister-type-inlet-filters-silencers.jpg" alt="Canister Type Inlet Filters / Silencers"></div>
-				<div>
-					<h2>Canister Type Inlet Filters / Silencers</h2>
-						<p>Moulded filters are typically used on air filtration applications...</p>
+			<div class="products__gallery__item">
+				<div class="products__gallery__item__image-container">
+					<img src="./public/images/6dust-collector-filter-elements.jpg" class="products__gallery__item__image-container__image" alt="Dust Collector Filter Elements">
+				</div>
+				<div class="products__gallery__item__text-container">
+					<h2 class="products__gallery__item__text-container__header">Dust Collector Filter Elements</h2>
+						<p class="products__gallery__item__text-container__paragraph">Moulded filters are typically used on air filtration applications...</p>
 				</div>
 			</div>
-			<div>
-				<div><img src="./public/images/6dust-collector-filter-elements.jpg" alt="Dust Collector Filter Elements"></div>
-				<div>
-					<h2>Dust Collector Filter Elements</h2>
-						<p>Moulded filters are typically used on air filtration applications...</p>
+			<div class="products__gallery__item">
+				<div class="products__gallery__item__image-container">
+					<img src="./public/images/7dynamic-filtration-cross-reference.jpg" class="products__gallery__item__image-container__image" alt="Dynamic Filtration Cross Reference">
 				</div>
-			</div>
-			<div>
-				<div><img src="./public/images/7dynamic-filtration-cross-reference.jpg" alt="Dynamic Filtration Cross Reference"></div>
-				<div>
-					<h2>Dynamic Filtration Cross Reference</h2>
-						<p>Moulded filters are typically used on air filtration applications...</p>
+				<div class="products__gallery__item__text-container">
+					<h2 class="products__gallery__item__text-container__header">Dynamic Filtration Cross Reference</h2>
+						<p class="products__gallery__item__text-container__paragraph">Moulded filters are typically used on air filtration applications...</p>
 				</div>
 			</div>
 		</section>
