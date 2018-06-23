@@ -1,7 +1,45 @@
-const ohHey = "Hello World";
+const app = {};
 
-console.log(ohHey);
+app.hamburger = () => {
+  $('#nav-icon').click(() => {
+    $('ul').toggleClass('active');
+  });
+}
 
+app.closeHamburger = () => {
+  $('.header__nav__list__item__link').click(() => {
+    $('ul').removeClass('active');
+    $('#nav-icon').removeClass('open');
+  });
+}
 
+app.hamburgerAnimate = () => {
+  $('#nav-icon').click(function () {
+    $(this).toggleClass('open');
+  });
+}
 
-console.log(`hello`);
+app.smoothScroll = () => {
+  $("a").on('click', function (e) {
+    if (this.hash !== "") {
+      e.preventDefault();
+      const hash = this.hash;
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function () {
+        window.location.hash = hash;
+      });
+    }
+  });
+}
+
+app.init = () => {
+  app.hamburger();
+  app.closeHamburger();
+  app.hamburgerAnimate();
+  app.smoothScroll();
+}
+
+$(function () {
+  app.init();
+});

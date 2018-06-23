@@ -1,7 +1,47 @@
-"use strict";
+'use strict';
 
-var ohHey = "Hello World";
+var app = {};
 
-console.log(ohHey);
+app.hamburger = function () {
+  $('#nav-icon').click(function () {
+    $('ul').toggleClass('active');
+  });
+};
 
-console.log("hello");
+app.closeHamburger = function () {
+  $('.header__nav__list__item__link').click(function () {
+    $('ul').removeClass('active');
+    $('#nav-icon').removeClass('open');
+  });
+};
+
+app.hamburgerAnimate = function () {
+  $('#nav-icon').click(function () {
+    $(this).toggleClass('open');
+  });
+};
+
+app.smoothScroll = function () {
+  $("a").on('click', function (e) {
+    if (this.hash !== "") {
+      e.preventDefault();
+      var hash = this.hash;
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function () {
+        window.location.hash = hash;
+      });
+    }
+  });
+};
+
+app.init = function () {
+  app.hamburger();
+  app.closeHamburger();
+  app.hamburgerAnimate();
+  app.smoothScroll();
+};
+
+$(function () {
+  app.init();
+});
