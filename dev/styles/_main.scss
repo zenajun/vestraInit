@@ -67,9 +67,10 @@
     text-transform: uppercase;
     font-weight: 300;
     font-size: 1.8rem;
-    line-height: 30px;
-    margin-top: 45px;
+    line-height: 3rem;
+    margin: 45px auto;
     padding-bottom: 60px;
+    max-width: 1255px;    
     @media (min-width: 1040px) {
       font-size: 2.4rem;
     }
@@ -86,6 +87,41 @@
     &:hover {
       background: $accentColor;
       border: 1px solid $accentColor;
+    }
+  }
+}
+
+.industries {
+  padding: 75px 0;
+  background: $accentBackground;
+  &__header {
+    color: $darkGrey;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 3rem;
+    text-align: center;
+    margin: 0;
+  }
+  &__paragraph {
+    text-align: center;
+    color: $darkGrey;
+    font-size: 1.9rem;
+    font-weight: 300;
+    margin-bottom: 55px;
+  }
+  &__gallery {
+    padding: 0 5px;
+    &__item {
+      max-width: 223px;
+      margin: 0 auto;
+      padding-bottom: 35px;
+      &__text-container {
+        &__paragraph {
+          color: $lightGrey;
+          font-weight: 500;
+          font-size: 1.8rem;
+        }
+      }
     }
   }
 }

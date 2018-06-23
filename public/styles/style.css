@@ -224,9 +224,10 @@ body {
     text-transform: uppercase;
     font-weight: 300;
     font-size: 1.8rem;
-    line-height: 30px;
-    margin-top: 45px;
-    padding-bottom: 60px; }
+    line-height: 3rem;
+    margin: 45px auto;
+    padding-bottom: 60px;
+    max-width: 1255px; }
     @media (min-width: 1040px) {
       .custom__paragraph {
         font-size: 2.4rem; } }
@@ -243,3 +244,30 @@ body {
     .custom__link:hover {
       background: #ffb500;
       border: 1px solid #ffb500; }
+
+.industries {
+  padding: 75px 0;
+  background: #f6f6f6; }
+  .industries__header {
+    color: #262626;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 3rem;
+    text-align: center;
+    margin: 0; }
+  .industries__paragraph {
+    text-align: center;
+    color: #262626;
+    font-size: 1.9rem;
+    font-weight: 300;
+    margin-bottom: 55px; }
+  .industries__gallery {
+    padding: 0 5px; }
+    .industries__gallery__item {
+      max-width: 223px;
+      margin: 0 auto;
+      padding-bottom: 35px; }
+      .industries__gallery__item__text-container__paragraph {
+        color: #515353;
+        font-weight: 500;
+        font-size: 1.8rem; }
