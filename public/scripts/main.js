@@ -4,13 +4,13 @@ var app = {};
 
 app.hamburger = function () {
   $('#nav-icon').click(function () {
-    $('.global-nav').toggleClass('active');
+    $('.animated').toggleClass('active-nav');
   });
 };
 
 app.closeHamburger = function () {
-  $('.global-nav__item').click(function () {
-    $('.global-nav').removeClass('active');
+  $('.menu-link').click(function () {
+    $('.animated').removeClass('active-nav');
     $('#nav-icon').removeClass('open');
   });
 };
@@ -35,11 +35,52 @@ app.smoothScroll = function () {
   });
 };
 
+app.bxSlider = function () {
+  $('.slider').bxSlider();
+};
+
+app.disableScroll = function () {
+  $('html, body').css({
+    overflow: 'hidden',
+    height: '100%'
+  });
+};
+
+app.restoreScroll = function () {
+  $('html, body').css({
+    overflow: 'auto',
+    height: 'auto'
+  });
+};
+
+app.openModal = function () {
+  var $modal = $('.modal');
+  $('button.request-quote').on('click', function () {
+    $($modal).css({
+      display: 'block'
+    });
+    app.disableScroll();
+  });
+};
+
+app.closeModal = function () {
+  var modal = document.getElementById('modal');
+  window.onclick = function (e) {
+    if (e.target === modal) {
+      modal.style.display = "none";
+      app.restoreScroll();
+    }
+  };
+};
+
 app.init = function () {
   app.hamburger();
   app.closeHamburger();
   app.hamburgerAnimate();
   app.smoothScroll();
+  app.bxSlider();
+  app.openModal();
+  app.closeModal();
 };
 
 $(function () {

@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,900" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link rel="stylesheet" href="/node_modules/bxslider/dist/jquery.bxslider.css">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -27,195 +29,317 @@
 	<meta name="msapplication-wide310x150logo" content="/widetile.png" />
 	<meta name="msapplication-square310x310logo" content="/largetile.png" />
 </head>
+
 <body>
-	<header class="header" id="home">
-		<div class="header__top-nav wrapper">
-			<div class="header__top-nav__container">
-				<a href="#" class="header__top-nav__container__logo"><img src="./public/images/logo.png" alt="Dynamic Filtration LTD." class="header__top-nav__container__logo__image"></a>
-			</div>
-			<!-- Hamburger Menu -->
-			<div class="toggle">
-				<div id="nav-icon">
-					<span class="menu"></span>
-					<span class="menu"></span>
-					<span class="menu"></span>
-					<span class="menu"></span>
-				</div>
-			</div>
-			<nav class="global-nav animated slideInDown ">
-				<div class="global-nav__container">
-					<div class="global-nav__container__contact">
-						<ul class="global-nav__container__contact__list">
-							<li class="global-nav__container__contact__list__item global-nav__item global-nav__item">Call Us: <a class="global-nav__container__contact__list__item__link" href="tel:800-265-4544">800.265.4544</a></li>
-							<li class="global-nav__container__contact__list__item global-nav__item global-nav__item"><a class="global-nav__container__contact__list__item__link" href="#"><img src="./public/images/linkin.png" alt="Linked in">Linked In</a></li>
-							<li class="global-nav__container__contact__list__item global-nav__item global-nav__item"><a class="global-nav__container__contact__list__item__link" href="#"><img src="./public/images/search.png" alt=""></a></li>
-						</ul>
+	<!-- Modal -->
+	<div class="quote modal" id="modal">
+		<div class="quote-content">
+			<form class="quote__form">
+				<div class="quote__form__intake form-wrapper">
+					<h2 class="form__header">Request Information*</h2>
+					<div class="quote__form__intake__personal-data">
+						<label for="name" class="visuallyhidden">Name</label>
+						<input type="text" id="name" name="name" placeholder="Name">
+						
+						<label for="company" class="visuallyhidden">Company</label>
+						<input type="text" id="company" name="company" placeholder="Company">
+						
+						<label for="email" class="visuallyhidden">Email</label>
+						<input type="email" id="email" name="email" placeholder="Email">
+						
+						<label for="Phone" class="visuallyhidden">Phone</label>
+						<input type="text" id="phone" name="phone" placeholder="Phone">
 					</div>
-					<div class="global-nav__container__page-nav">
-						<ul class="global-nav__container__page-nav__list">
-							<li class="global-nav__container__page-nav__list__item global-nav__item"><a class="global-nav__container__page-nav__list__item__link" href="#home">Home</a></li>
-							<li class="global-nav__container__page-nav__list__item global-nav__item"><a class="global-nav__container__page-nav__list__item__link" href="#products">Products</a></li>
-							<li class="global-nav__container__page-nav__list__item global-nav__item"><a class="global-nav__container__page-nav__list__item__link" href="#custom">Custom</a></li>
-							<li class="global-nav__container__page-nav__list__item global-nav__item"><a class="global-nav__container__page-nav__list__item__link" href="#industries">Industries</a></li>
-							<li class="global-nav__container__page-nav__list__item global-nav__item"><a class="global-nav__container__page-nav__list__item__link" href="#about">About Us</a></li>
-							<li class="global-nav__container__page-nav__list__item global-nav__item"><a class="global-nav__container__page-nav__list__item__link" href="#contact">Contact Us</a></li>
-						</ul>
+					</div>
+					<div class="quote__form__upload form-wrapper">
+						<h2 class="form__header">Upload PDF:</h2>
+						<div class="quote__form__submit-pdf">
+							<img src="./public/images/icon-pdf.png" alt="Icon - PDF file">
+							<input type="file" name="file" id="file" placeholder="Browse">
+						</div>
+					</div>
+					<div class="quote__form__options form-wrapper">
+						<div class="quote__form__options__menu">
+							<div>
+								<label for="cross-ref">Cross reference</label>
+								<input type="radio" id="cross-ref" name="options">
+							</div>
+							<div>
+								<label for="form-custom">Custom application</label>
+								<input type="radio" id="form-custom" name="options">
+							</div>
+							<p class="quote__form__options__menu__paragraph">(optional)</p>
+						</div>
+						<div class="quote__form__options__intake">
+							<label for="height" class="visuallyhidden">Height</label>
+							<input type="text" id="height" name="height" placeholder="Height">
+							
+							<label for="od" class="visuallyhidden">OD</label>
+							<input type="text" id="od" name="od" placeholder="OD">
+							
+							<label for="id" class="visuallyhidden">ID</label>
+							<input type="text" id="id" name="id" placeholder="ID">
+							
+							<label for="cfm" class="visuallyhidden">CFM</label>
+							<input type="text" id="cfm" name="cfm" placeholder="CFM">
+						</div>
+				</div>
+				<div class="quote__form__message form-wrapper">
+					<h2 class="form__header">Message/order details:</h2>
+					<textarea name="message" id="message" placeholder="Add Comment"></textarea>
+				</div>
+				<div class="quote__form__submit">
+					<div class="quote__form__submit__security">
+						<p class="quote__form__submit__paragraph">Security Question: 2 + 6 =&nbsp;&nbsp;</p>
+						<div>
+							<label for="answer" class="visuallyhidden"></label>
+							<input type="text" id="answer" name="answer">
+						</div>
+					</div>
+					<div class="quote__form__submit__btn">
+						<input type="submit" value="Send">
 					</div>
 				</div>
-				<div class="header__top-nav__container__quote">
-					<a href="#"><img src="./public/images/request-info.png" alt="">Request Information</a>
-				</div>
-			</div>
-		</nav>
-		<!-- Slider -->
-		<div>
-			<h1>Manufacturing and Designer </br>of Industrial Filtration</h1>
-			<h2>for Air and Liquid Applications</h2>
+			</form>
 		</div>
+	</div>  <!-- Modal Ends -->
+
+	<!-- Header Starts -->
+	<header class="header" id="home">
+		<!-- Hamburger Menu -->
+		<div class="toggle">
+			<div id="nav-icon">
+				<span class="menu"></span>
+				<span class="menu"></span>
+				<span class="menu"></span>
+				<span class="menu"></span>
+			</div>
+		</div> <!-- Hamburger Ends -->
+
+		<div class="header-nav wrapper">
+			<div class="header-nav__logo">
+				<a href="#">
+					<img src="./public/images/logo.png" alt="Dynamic Filtration LTD.">
+				</a>
+			</div>
+			<div class="header-nav__logo">
+				<button class="request-quote header-nav__logo__button" href="#">
+					<img class="header-nav__logo__button__image" src="./public/images/request-info.png" alt="">Request Information</button>
+			</div>
+		</div>
+
+		<nav class="header-menu animated slideInDown">
+			<ul class="header-menu__contact-list">
+				<li class="header-menu__contact-list__item">Call Us:
+					<a class="header-menu__contact-list__item__link" href="tel:800-265-4544">800.265.4544</a>
+				</li>
+				<li class="header-menu__contact-list__item menu-link">
+					<a class="header-menu__contact-list__item__link" href="#">
+						<img src="./public/images/linkin.png" alt="Linked in">Linked In</a>
+				</li>
+				<li class="header-menu__contact-list__item menu-link">
+					<a class="header-menu__contact-list__item__link" href="#">
+						<img src="./public/images/search.png" alt="">
+					</a>
+				</li>
+			</ul>
+
+			<ul class="header-menu__page-list">
+				<li class="header-menu__page-list__item menu-link">
+					<a class="header-menu__page-list__item__link" href="#home">Home</a>
+				</li>
+				<li class="header-menu__page-list__item menu-link">
+					<a class="header-menu__page-list__item__link" href="#products">Products</a>
+				</li>
+				<li class="header-menu__page-list__item menu-link">
+					<a class="header-menu__page-list__item__link" href="#custom">Custom</a>
+				</li>
+				<li class="header-menu__page-list__item menu-link">
+					<a class="header-menu__page-list__item__link" href="#industries">Industries</a>
+				</li>
+				<li class="header-menu__page-list__item menu-link">
+					<a class="header-menu__page-list__item__link" href="#about">About Us</a>
+				</li>
+				<li class="header-menu__page-list__item menu-link">
+					<a class="header-menu__page-list__item__link" href="#contact">Contact Us</a>
+				</li>
+			</ul>
+		</nav>
+
+		<div class="header__main-heading">
+				<h1 class="header__main-heading__header1">Manufacturing and Designer </br>of Industrial Filtration</h1>
+				<h2 class="header__main-heading__header2"><span>for Air and<br/></span> Liquid Applications</h2>
+			</div>
+		</div>
+		<!-- Slider -->
+			<div class="slider">
+				<div>
+					<img src="./public/images/hero.jpg" alt="Clouds in the sky with 2 filters">
+				</div>
+				<div>
+					<img src="./public/images/hero2.jpg" alt="Industrial skyline with 2 filters">
+				</div>
+			</div>
+
+		
 	</header>
 	<main>
 		<!-- Products -->
 		<section id="products" class="products">
-			<h2 class="products__header">Welcome to Dynamic Filtration</h2>
-			<p class="products__paragraph">Dynamic Filtration's product lines include: inlet filters for air compression equipment, replacement filter elements and panal filters for several oem's such as dollinger, consler, solberg, nafco, ifm, airmaze, sparks and endustra.</p>
-			<div class="products__gallery">
-				<div class="products__gallery__item">
-					<div class="products__gallery__item__image-container">
-						<img src="./public/images/1moulded-filter-element.jpg" class="products__gallery__item__image-container__image" alt="Moulded filter element">
-					</div>
-					<div class="products__gallery__item__text-container">
-						<h2 class="products__gallery__item__text-container__header">Moulded Filter Elements</h2>
-						<p class="products__gallery__item__text-container__paragraph">Moulded filters are typically used on air filtration applications...</p>
-					</div>
-				</div>
-				<div class="products__gallery__item">
-					<div class="products__gallery__item__image-container">
-						<img src="./public/images/2sewn-end-filter-elements.jpg" class="products__gallery__item__image-container__image" alt="Sewn End Filter Elements">
-					</div>
-					<div class="products__gallery__item__text-container">
-						<h2 class="products__gallery__item__text-container__header">Sewn End Filter Elements</h2>
+			<div class="products__wrapper">
+				<h2 class="products__header">Welcome to Dynamic Filtration</h2>
+				<p class="products__paragraph">Dynamic Filtration's product lines include: inlet filters for air compression equipment, replacement filter elements
+					and panal filters for several oem's such as dollinger, consler, solberg, nafco, ifm, airmaze, sparks and endustra.</p>
+				<div class="products__gallery">
+					<div class="products__gallery__item">
+						<div class="products__gallery__item__image-container">
+							<img src="./public/images/1moulded-filter-element.jpg" class="products__gallery__item__image-container__image" alt="Moulded filter element">
+						</div>
+						<div class="products__gallery__item__text-container">
+							<h2 class="products__gallery__item__text-container__header">Moulded Filter Elements</h2>
 							<p class="products__gallery__item__text-container__paragraph">Moulded filters are typically used on air filtration applications...</p>
+						</div>
 					</div>
-				</div>
-				<div class="products__gallery__item">
-					<div class="products__gallery__item__image-container">
-						<img src="./public/images/3replacement-panal-filters.jpg" class="products__gallery__item__image-container__image" alt="Replacement Panel Filters">
-					</div>
-					<div class="products__gallery__item__text-container">
-						<h2 class="products__gallery__item__text-container__header">Replacement Panel Filters</h2>
+					<div class="products__gallery__item">
+						<div class="products__gallery__item__image-container">
+							<img src="./public/images/2sewn-end-filter-elements.jpg" class="products__gallery__item__image-container__image" alt="Sewn End Filter Elements">
+						</div>
+						<div class="products__gallery__item__text-container">
+							<h2 class="products__gallery__item__text-container__header">Sewn End Filter Elements</h2>
 							<p class="products__gallery__item__text-container__paragraph">Moulded filters are typically used on air filtration applications...</p>
+						</div>
 					</div>
-				</div>
-				<div class="products__gallery__item">
-					<div class="products__gallery__item__image-container">
-						<img src="./public/images/4panal-type-inlet-filters.jpg" class="products__gallery__item__image-container__image" alt="Panel Type Inlet filters">
-					</div>
-					<div class="products__gallery__item__text-container">
-						<h2 class="products__gallery__item__text-container__header">Panel Type Inlet filters</h2>
+					<div class="products__gallery__item">
+						<div class="products__gallery__item__image-container">
+							<img src="./public/images/3replacement-panal-filters.jpg" class="products__gallery__item__image-container__image" alt="Replacement Panel Filters">
+						</div>
+						<div class="products__gallery__item__text-container">
+							<h2 class="products__gallery__item__text-container__header">Replacement Panel Filters</h2>
 							<p class="products__gallery__item__text-container__paragraph">Moulded filters are typically used on air filtration applications...</p>
+						</div>
 					</div>
-				</div>
-				<div class="products__gallery__item">
-					<div class="products__gallery__item__image-container">
-						<img src="./public/images/5canister-type-inlet-filters-silencers.jpg" class="products__gallery__item__image-container__image" alt="Canister Type Inlet Filters / Silencers">
-					</div>
-					<div class="products__gallery__item__text-container">
-						<h2 class="products__gallery__item__text-container__header">Canister Type Inlet Filters / Silencers</h2>
+					<div class="products__gallery__item">
+						<div class="products__gallery__item__image-container">
+							<img src="./public/images/4panal-type-inlet-filters.jpg" class="products__gallery__item__image-container__image" alt="Panel Type Inlet filters">
+						</div>
+						<div class="products__gallery__item__text-container">
+							<h2 class="products__gallery__item__text-container__header">Panel Type Inlet filters</h2>
 							<p class="products__gallery__item__text-container__paragraph">Moulded filters are typically used on air filtration applications...</p>
+						</div>
 					</div>
-				</div>
-				<div class="products__gallery__item">
-					<div class="products__gallery__item__image-container">
-						<img src="./public/images/6dust-collector-filter-elements.jpg" class="products__gallery__item__image-container__image" alt="Dust Collector Filter Elements">
-					</div>
-					<div class="products__gallery__item__text-container">
-						<h2 class="products__gallery__item__text-container__header">Dust Collector Filter Elements</h2>
+					<div class="products__gallery__item">
+						<div class="products__gallery__item__image-container">
+							<img src="./public/images/5canister-type-inlet-filters-silencers.jpg" class="products__gallery__item__image-container__image"
+							  alt="Canister Type Inlet Filters / Silencers">
+						</div>
+						<div class="products__gallery__item__text-container">
+							<h2 class="products__gallery__item__text-container__header">Canister Type Inlet Filters / Silencers</h2>
 							<p class="products__gallery__item__text-container__paragraph">Moulded filters are typically used on air filtration applications...</p>
+						</div>
 					</div>
-				</div>
-				<div class="products__gallery__item">
-					<div class="products__gallery__item__image-container">
-						<img src="./public/images/7dynamic-filtration-cross-reference.jpg" class="products__gallery__item__image-container__image" alt="Dynamic Filtration Cross Reference">
-					</div>
-					<div class="products__gallery__item__text-container">
-						<h2 class="products__gallery__item__text-container__header">Dynamic Filtration Cross Reference</h2>
+					<div class="products__gallery__item">
+						<div class="products__gallery__item__image-container">
+							<img src="./public/images/6dust-collector-filter-elements.jpg" class="products__gallery__item__image-container__image" alt="Dust Collector Filter Elements">
+						</div>
+						<div class="products__gallery__item__text-container">
+							<h2 class="products__gallery__item__text-container__header">Dust Collector Filter Elements</h2>
 							<p class="products__gallery__item__text-container__paragraph">Moulded filters are typically used on air filtration applications...</p>
+						</div>
+					</div>
+					<div class="products__gallery__item">
+						<div class="products__gallery__item__image-container">
+							<img src="./public/images/7dynamic-filtration-cross-reference.jpg" class="products__gallery__item__image-container__image"
+							  alt="Dynamic Filtration Cross Reference">
+						</div>
+						<div class="products__gallery__item__text-container">
+							<h2 class="products__gallery__item__text-container__header">Dynamic Filtration Cross Reference</h2>
+							<p class="products__gallery__item__text-container__paragraph">Moulded filters are typically used on air filtration applications...</p>
+						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 		<!-- Custom -->
 		<section id="custom" class="custom">
-			<h2 class="custom__header">Manufacturing Specialists of Air And Liquid Filter Products since 1988</h2>
-			<p class="custom__paragraph">Dynamic filtration limited was established in 1988 with 8,500 sq ft of production space in waterloo, Onatrio.  In 2014, we underwent an extensive building expansion which nearly doubled our production capacity.  As a proud family owned & operated business, we have over 38 years of experience in the filtration industry and are a manufacturer and supplier to North America for inlet filters, and filter systems for compressors and blower units.</p>
-			<a href="#" class="custom__link">Read More</a>
+			<div class="wrapper">
+				<h2 class="custom__header">Manufacturing Specialists of Air And Liquid Filter Products since 1988</h2>
+				<p class="custom__paragraph">Dynamic filtration limited was established in 1988 with 8,500 sq ft of production space in waterloo, Onatrio. In 2014,
+					we underwent an extensive building expansion which nearly doubled our production capacity. As a proud family owned &
+					operated business, we have over 38 years of experience in the filtration industry and are a manufacturer and supplier
+					to North America for inlet filters, and filter systems for compressors and blower units.</p>
+					<a href="#" class="custom__link">Read More</a>
+			</div>
 		</section>
+		<!-- Industries -->
 		<section id="industries" class="industries">
-			<h2 class="industries__header">Our Industries</h2>
-			<p class="industries__paragraph">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid, dicta voluptatem eligendi impedit earum totam quas consequatur rem provident magni, dignissimos nemo obcaecati sint dolorum nobis quod exercitationem nesciunt. Quaerat!</p>
-			<div class="industries__gallery">
-				<div class="industries__gallery__item">
-					<div class="industries__gallery__item__image-container">
-						<img class="industries__gallery__item__image-container__image" src="./public/images/11industry.jpg" alt="Oil, Gas & Petrochemical">
+			<div class="industries__wrapper">
+				<h2 class="industries__header">Our Industries</h2>
+				<p class="industries__paragraph">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid, dicta voluptatem eligendi impedit earum totam quas
+			consequatur rem provident magni, dignissimos nemo obcaecati.</p>
+				<div class="industries__gallery">
+					<div class="industries__gallery__item">
+						<div class="industries__gallery__item__image-container">
+							<img class="industries__gallery__item__image-container__image" src="./public/images/11industry.jpg" alt="Oil, Gas & Petrochemical">
+						</div>
+						<div class="industries__gallery__item__text-container">
+							<p class="industries__gallery__item__text-container__paragraph">Oil, Gas & Petrochemical</p>
+						</div>
 					</div>
-					<div class="industries__gallery__item__text-container">
-						<p class="industries__gallery__item__text-container__paragraph">Oil, Gas & Petrochemical</p>
+					<div class="industries__gallery__item">
+						<div class="industries__gallery__item__image-container">
+							<img class="industries__gallery__item__image-container__image" src="./public/images/12industry.jpg" alt="Vacuum Trucking">
+						</div>
+						<div class="industries__gallery__item__text-container">
+							<p class="industries__gallery__item__text-container__paragraph">Vacuum Trucking</p>
+						</div>
 					</div>
-				</div>
-				<div class="industries__gallery__item">
-					<div class="industries__gallery__item__image-container">
-						<img class="industries__gallery__item__image-container__image" src="./public/images/12industry.jpg" alt="Vacuum Trucking">
+					<div class="industries__gallery__item">
+						<div class="industries__gallery__item__image-container">
+							<img class="industries__gallery__item__image-container__image" src="./public/images/13industry.jpg" alt="Concrete production">
+						</div>
+						<div class="industries__gallery__item__text-container">
+							<p class="industries__gallery__item__text-container__paragraph">Concrete production</p>
+						</div>
 					</div>
-					<div class="industries__gallery__item__text-container">
-						<p class="industries__gallery__item__text-container__paragraph">Vacuum Trucking</p>
+					<div class="industries__gallery__item">
+						<div class="industries__gallery__item__image-container">
+							<img class="industries__gallery__item__image-container__image" src="./public/images/14industry.jpg" alt="Municipal Water Treatment">
+						</div>
+						<div class="industries__gallery__item__text-container">
+							<p class="industries__gallery__item__text-container__paragraph">Municipal Water Treatment</p>
+						</div>
 					</div>
-				</div>
-				<div class="industries__gallery__item">
-					<div class="industries__gallery__item__image-container">
-						<img class="industries__gallery__item__image-container__image" src="./public/images/13industry.jpg" alt="Concrete production">
+					<div class="industries__gallery__item">
+						<div class="industries__gallery__item__image-container">
+							<img class="industries__gallery__item__image-container__image" src="./public/images/15industry.jpg" alt="Fertilizer Manufacturing Plants">
+						</div>
+						<div class="industries__gallery__item__text-container">
+							<p class="industries__gallery__item__text-container__paragraph">Fertilizer Manufacturing Plants</p>
+						</div>
 					</div>
-					<div class="industries__gallery__item__text-container">
-						<p class="industries__gallery__item__text-container__paragraph">Concrete production</p>
+					<div class="industries__gallery__item">
+						<div class="industries__gallery__item__image-container">
+							<img class="industries__gallery__item__image-container__image" src="./public/images/16industry.jpg" alt="Powder Chemical Application">
+						</div>
+						<div class="industries__gallery__item__text-container">
+							<p class="industries__gallery__item__text-container__paragraph">Powder Chemical Application</p>
+						</div>
 					</div>
-				</div>
-				<div class="industries__gallery__item">
-					<div class="industries__gallery__item__image-container">
-						<img class="industries__gallery__item__image-container__image" src="./public/images/14industry.jpg" alt="Municipal Water Treatment">
+					<div class="industries__gallery__item">
+						<div class="industries__gallery__item__image-container">
+							<img class="industries__gallery__item__image-container__image" src="./public/images/17industry.jpg" alt="Food Processing">
+						</div>
+						<div class="industries__gallery__item__text-container">
+							<p class="industries__gallery__item__text-container__paragraph">Food Processing</p>
+						</div>
 					</div>
-					<div class="industries__gallery__item__text-container">
-						<p class="industries__gallery__item__text-container__paragraph">Municipal Water Treatment</p>
-					</div>
-				</div>
-				<div class="industries__gallery__item">
-					<div class="industries__gallery__item__image-container">
-						<img class="industries__gallery__item__image-container__image" src="./public/images/15industry.jpg" alt="Fertilizer Manufacturing Plants">
-					</div>
-					<div class="industries__gallery__item__text-container">
-						<p class="industries__gallery__item__text-container__paragraph">Fertilizer Manufacturing Plants</p>
-					</div>
-				</div>
-				<div class="industries__gallery__item">
-					<div class="industries__gallery__item__image-container">
-						<img class="industries__gallery__item__image-container__image" src="./public/images/16industry.jpg" alt="Powder Chemical Application">
-					</div>
-					<div class="industries__gallery__item__text-container">
-						<p class="industries__gallery__item__text-container__paragraph">Powder Chemical Application</p>
-					</div>
-				</div>
-				<div class="industries__gallery__item">
-					<div class="industries__gallery__item__image-container">
-						<img class="industries__gallery__item__image-container__image" src="./public/images/17industry.jpg" alt="Food Processing">
-					</div>
-					<div class="industries__gallery__item__text-container">
-						<p class="industries__gallery__item__text-container__paragraph">Food Processing</p>
-					</div>
-				</div>
-				<div class="industries__gallery__item">
-					<div class="industries__gallery__item__image-container">
-						<img class="industries__gallery__item__image-container__image" src="./public/images/18industry.jpg" alt="Mining">
-					</div>
-					<div class="industries__gallery__item__text-container">
-						<p class="industries__gallery__item__text-container__paragraph">Mining</p>
+					<div class="industries__gallery__item">
+						<div class="industries__gallery__item__image-container">
+							<img class="industries__gallery__item__image-container__image" src="./public/images/18industry.jpg" alt="Mining">
+						</div>
+						<div class="industries__gallery__item__text-container">
+							<p class="industries__gallery__item__text-container__paragraph">Mining</p>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -224,60 +348,102 @@
 
 	<!-- (50/3) (50/3) (50/3) (25) (25) -->
 	<footer class="footer-menu">
-		<div class="footer-menu col-one-sixth">
-			<h2 class="footer-menu__header">Site Map:</h2>
-			<nav class="footer-menu__nav">
-				<ul class="footer-menu__nav__list">
-					<li class="footer-menu__nav__list__item"><a class="footer-menu__nav__list__item__link" href="#home">Home</a></li>
-					<li class="footer-menu__nav__list__item"><a class="footer-menu__nav__list__item__link" href="#products">Products</a></li>
-					<li class="footer-menu__nav__list__item"><a class="footer-menu__nav__list__item__link" href="#custom">Custom</a></li>
-					<li class="footer-menu__nav__list__item"><a class="footer-menu__nav__list__item__link" href="#industries">Industries</a></li>
-					<li class="footer-menu__nav__list__item"><a class="footer-menu__nav__list__item__link" href="#about">About Us</a></li>
-					<li class="footer-menu__nav__list__item"><a class="footer-menu__nav__list__item__link" href="#contact">Contact Us</a></li>
-				</ul>
-			</nav>
-		</div>
-			<div class="footer-menu col-one-sixth">
-			<h2 class="footer-menu__header">Products:</h2>
-			<nav class="footer-menu__nav">
-				<ul class="footer-menu__nav__list">
-					<li class="footer-menu__nav__list__item"><a class="footer-menu__nav__list__item__link" href="#">Moulded Filter Elements</a></li>
-					<li class="footer-menu__nav__list__item"><a class="footer-menu__nav__list__item__link" href="#">Sewn End Filter Elements</a></li>
-					<li class="footer-menu__nav__list__item"><a class="footer-menu__nav__list__item__link" href="#">Replacement Panel Filters</a></li>
-					<li class="footer-menu__nav__list__item"><a class="footer-menu__nav__list__item__link" href="#">Panel Type Inlet Filters</a></li>
-					<li class="footer-menu__nav__list__item"><a class="footer-menu__nav__list__item__link" href="#">Canister Type Inlet Filters / Silencers</a></li>
-					<li class="footer-menu__nav__list__item"><a class="footer-menu__nav__list__item__link" href="#">Dust Collector Filter Elements</a></li>
-					<li class="footer-menu__nav__list__item"><a class="footer-menu__nav__list__item__link" href="#">Dynamic Filtration Cross Reference</a></li>
-				</ul>
-			</nav>
-		</div>
-		<div class="footer-menu col-one-sixth">
-			<div class="footer-menu col-one-sixth">
-				<h2 class="footer-menu__header">Contact Us:</h2>
-				<nav class="footer-menu__nav">
-					<ul class="footer-menu__nav__list">
-						<li class="footer-menu__nav__list__item">Phone number:</li>
-						<li class="footer-menu__nav__list__item">Toll-Free: <a class="footer-menu__nav__list__item__link" href="tel:1-833-856-6161">1-833-856-6161</a></li>
-						<li class="footer-menu__nav__list__item">Local Toronto:<a class="footer-menu__nav__list__item__link" href="tel:416-856-6161">416-856-6161</a></li>						
-					</ul>
-				</nav>
-			</div>
-		<div class="footer-menu col-one-quarter">
-			<a class="footer-menu__link" href="#"><img class="footer-menu__link__image" src="./public/images/request-info.png" alt="Request more information">Request Information</a>
-		</div>
-		<div class="footer-menu col-one-quarter">
-			<a href="#" class="footer-menu__link__logo"><img class="footer-menu__link__logo__image" src="./public/images/logo.png" alt="Dynamic Filtration LTD."></a>
-		</div>
-
-	</footer>	
-	<footer class="footer-copyright">
-		<h2 class="footer-copyright__header">Copyright</h2>
-		<div class="footer-copyright__text-container">
-			<p class="footer-copyright__text-container__paragraph">Careerscape 2018 All right Reserved</p>
-			<p class="footer-copyright__text-container__paragraph">Web Design Toronto by <a class="footer-copyright__text-container__paragraph__link" href="#">Vestra Inet</a></p>
+		<div class="footer__wrapper">
+			<div class="footer-container">
+				<div class="footer-menu col-15">
+					<h2 class="footer-menu__header">Site Map:</h2>
+					<nav class="footer-menu__nav">
+						<ul class="footer-menu__nav__list">
+							<li class="footer-menu__nav__list__item">
+								<a class="footer-menu__nav__list__item__link" href="#home">Home</a>
+							</li>
+							<li class="footer-menu__nav__list__item">
+								<a class="footer-menu__nav__list__item__link" href="#products">Products</a>
+							</li>
+							<li class="footer-menu__nav__list__item">
+								<a class="footer-menu__nav__list__item__link" href="#custom">Custom</a>
+							</li>
+							<li class="footer-menu__nav__list__item">
+								<a class="footer-menu__nav__list__item__link" href="#industries">Industries</a>
+							</li>
+							<li class="footer-menu__nav__list__item">
+								<a class="footer-menu__nav__list__item__link" href="#about">About Us</a>
+							</li>
+							<li class="footer-menu__nav__list__item">
+								<a class="footer-menu__nav__list__item__link" href="#contact">Contact Us</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="footer-menu col-20">
+					<h2 class="footer-menu__header">Products:</h2>
+					<nav class="footer-menu__nav">
+						<ul class="footer-menu__nav__list">
+							<li class="footer-menu__nav__list__item">
+								<a class="footer-menu__nav__list__item__link" href="#">Moulded Filter Elements</a>
+							</li>
+							<li class="footer-menu__nav__list__item">
+								<a class="footer-menu__nav__list__item__link" href="#">Sewn End Filter Elements</a>
+							</li>
+							<li class="footer-menu__nav__list__item">
+								<a class="footer-menu__nav__list__item__link" href="#">Replacement Panel Filters</a>
+							</li>
+							<li class="footer-menu__nav__list__item">
+								<a class="footer-menu__nav__list__item__link" href="#">Panel Type Inlet Filters</a>
+							</li>
+							<li class="footer-menu__nav__list__item">
+								<a class="footer-menu__nav__list__item__link" href="#">Canister Type Inlet Filters / Silencers</a>
+							</li>
+							<li class="footer-menu__nav__list__item">
+								<a class="footer-menu__nav__list__item__link" href="#">Dust Collector Filter Elements</a>
+							</li>
+							<li class="footer-menu__nav__list__item">
+								<a class="footer-menu__nav__list__item__link" href="#">Dynamic Filtration Cross Reference</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="footer-menu col-15">
+					<h2 class="footer-menu__header">Contact Us:</h2>
+					<nav class="footer-menu__nav">
+						<ul class="footer-menu__nav__list">
+							<li class="footer-menu__nav__list__item">Phone number:</li>
+							<li class="footer-menu__nav__list__item">Toll-Free:
+								<a class="footer-menu__nav__list__item__link" href="tel:1-833-856-6161">1-833-856-6161</a>
+							</li>
+							<li class="footer-menu__nav__list__item">Local Toronto:
+								<a class="footer-menu__nav__list__item__link" href="tel:416-856-6161">416-856-6161</a>
+							</li>
+						</ul>
+					</nav>
+					</div>
+					<div class="footer-menu col-one-quarter">
+						<button class="request-quote footer-menu__link">
+							<img class="footer-menu__link__image" src="./public/images/request-info.png" alt="Request more information">Request Information</button>
+					</div>
+					<div class="footer-menu col-one-quarter">
+						<a href="#" class="footer-menu__link__logo">
+						<img class="footer-menu__link__logo__image" src="./public/images/logo.png" alt="Dynamic Filtration LTD.">
+					</a>
+				</div>
+			</div>			
 		</div>
 	</footer>
+	<footer class="footer-copyright">
+		<div class="footer__wrapper">
+			<h2 class="footer-copyright__header">Copyright</h2>
+			<div class="footer-copyright__text-container">
+				<p class="footer-copyright__text-container__paragraph">Careerscape 2018 All right Reserved</p>
+				<p class="footer-copyright__text-container__paragraph">Web Design Toronto by
+					<a class="footer-copyright__text-container__paragraph__link" href="#">Vestra Inet</a>
+				</p>
+			</div>
+		</div>
+	</footer>
+	<!-- jQuery script-->
 	<script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+	<!-- bxSlider script -->
+	<script src="/node_modules/bxslider/dist/jquery.bxslider.min.js"></script>
 	<script src="public/scripts/main.js"></script>
 </body>
 </html>

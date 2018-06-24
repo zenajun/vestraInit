@@ -2,13 +2,13 @@ const app = {};
 
 app.hamburger = () => {
   $('#nav-icon').click(() => {
-    $('.global-nav').toggleClass('active');
+    $('.animated').toggleClass('active-nav');
   });
 }
 
 app.closeHamburger = () => {
-  $('.global-nav__item').click(() => {
-    $('.global-nav').removeClass('active');
+  $('.menu-link').click(() => {
+    $('.animated').removeClass('active-nav');
     $('#nav-icon').removeClass('open');
   });
 }
@@ -33,13 +33,55 @@ app.smoothScroll = () => {
   });
 }
 
+app.bxSlider = () => {
+  $('.slider').bxSlider();
+}
+
+app.disableScroll = () => {
+  $('html, body').css({
+    overflow: 'hidden',
+    height: '100%'
+  });
+}
+
+app.restoreScroll = () => {
+  $('html, body').css({
+    overflow: 'auto',
+    height: 'auto'
+  });
+}
+
+app.openModal = () => {
+  const $modal = $('.modal');
+  $('button.request-quote').on('click', function() {
+    $($modal).css({
+      display: 'block'
+    });
+    app.disableScroll();
+  });
+}
+
+app.closeModal = () => {
+  const modal = document.getElementById('modal');
+  window.onclick = function (e) {   
+    if (e.target === modal) {
+      modal.style.display = "none";
+      app.restoreScroll();
+    }
+  }    
+}
+
 app.init = () => {
   app.hamburger();
   app.closeHamburger();
   app.hamburgerAnimate();
   app.smoothScroll();
+  app.bxSlider();
+  app.openModal();
+  app.closeModal();
 }
 
+
 $(function () {
-  app.init();
+  app.init();  
 });

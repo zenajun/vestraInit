@@ -9,7 +9,7 @@ body {
 }
 
 .wrapper {
-  max-width: 1290px;
+  max-width: 1810px;
   margin: 0 auto;
 }
 
@@ -22,12 +22,22 @@ $accentBackground: #f6f6f6;
 $accentBlue: #009ac8;
 $lightBlue: #38add4;
 
-.col-one-sixth {
+.col-15 {
   @media (min-width: 1020px) {
-    width: calc(50% / 3);
+    width: 15%
+  }
+}
+.col-20 {
+  @media (min-width: 1020px) {
+    width: 20%;
   }
 }
 
+.col-one-quarter {
+  @media (min-width: 1020px) {
+    width: 25%;
+  }
+}
 
 
 
