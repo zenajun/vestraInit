@@ -321,7 +321,10 @@ body {
       padding: 10px;
       line-height: 2; }
       .header-menu__contact-list__item__link {
-        text-decoration: none; }
+        text-decoration: none;
+        color: black; }
+        .header-menu__contact-list__item__link__image {
+          height: 20px; }
   .header-menu__page-list {
     padding: 0;
     margin: 0;
@@ -335,23 +338,25 @@ body {
         -webkit-box-pack: center;
             -ms-flex-pack: center;
                 justify-content: center; } }
-    @media (min-width: 1810px) {
-      .header-menu__page-list__item {
-        padding-left: 15px; } }
-    .header-menu__page-list__item__link {
-      text-decoration: none;
-      padding: 10px;
-      color: #262626;
-      font-size: 2.1rem;
-      border-radius: 30px;
-      -webkit-transition: all 0.3s;
-      transition: all 0.3s; }
-      @media (min-width: 1820px) {
-        .header-menu__page-list__item__link {
-          padding: 10px 25px; } }
-      .header-menu__page-list__item__link:hover {
-        color: white;
-        background: #ffb500; }
+    .header-menu__page-list__item {
+      padding-bottom: 15px; }
+      @media (min-width: 1810px) {
+        .header-menu__page-list__item {
+          padding-left: 15px; } }
+      .header-menu__page-list__item__link {
+        text-decoration: none;
+        padding: 10px;
+        color: #262626;
+        font-size: 2.1rem;
+        border-radius: 30px;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s; }
+        @media (min-width: 1820px) {
+          .header-menu__page-list__item__link {
+            padding: 10px 25px; } }
+        .header-menu__page-list__item__link:hover {
+          color: white;
+          background: #ffb500; }
 
 .toggle {
   width: 100%;
@@ -673,6 +678,7 @@ form img {
   display: inline-block; }
 
 .modal {
+  display: none;
   position: fixed;
   z-index: 50;
   padding-top: 100px;

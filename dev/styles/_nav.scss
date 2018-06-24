@@ -80,6 +80,10 @@
       line-height: 2;     
       &__link {
         text-decoration: none;
+        color: black;
+        &__image {
+          height: 20px;
+        }
       }
     }
     
@@ -94,6 +98,7 @@
       justify-content: center;
     }
     &__item {
+      padding-bottom: 15px;
       @media (min-width: 1810px) {
         padding-left: 15px;
       }
